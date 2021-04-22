@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@casesensative 
-casesensative
-/
-user-directory
-forked from DevMountain/user-directory
-0
-0114
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-user-directory/data.js /
-@jonathanmaydm
-jonathanmaydm initial commit
-Latest commit ef0fba6 on Jan 16, 2019
- History
- 1 contributor
-289 lines (288 sloc)  6.86 KB
-  
 const data = [
   {
     id: 1,
@@ -318,16 +287,3 @@ const data = [
 ];
 
 export default data;
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
