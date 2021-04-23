@@ -4,6 +4,7 @@ import users from './data';
 import Slides from './Slides';
 import Buttons from './Buttons';
 import PageCounter from './PageCounter';
+import EditForm from './EditForm'
 
 class App extends Component {
   constructor(props) {
@@ -11,10 +12,12 @@ class App extends Component {
     this.state = {
       users: users,
       currentUser: 0,
+      editing: true,
     }
     this.nextUser = this.nextUser.bind(this);
     this.prevUser = this.prevUser.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -54,18 +57,25 @@ class App extends Component {
 
   }
 
+  toggleForm() {
+    this.setState({editing: !this.state.editing});
+  }
+
   render() {
     return (
       <div className="main">
         <div className="header"><div className="homebutton">Home</div></div>
         <div className="content">
           <PageCounter userArr={this.state.users} currentUser={this.state.currentUser}/>
-          <Slides user={this.state.users[this.state.currentUser]} />
+          {/* <Slides />
+          <EditForm /> */}
+          {this.state.editing ? <EditForm /> : <Slides user={this.state.users[this.state.currentUser]} />}
           <Buttons 
           currentUser={this.state.currentUser} 
           nextUserFn={this.nextUser} 
           prevUserFn={this.prevUser} 
-          deleteUserFn={this.deleteUser}/>
+          deleteUserFn={this.deleteUser}
+          toggleFormFn={this.toggleForm}/>
         </div>
       </div>
 
