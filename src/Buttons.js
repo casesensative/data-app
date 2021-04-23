@@ -1,15 +1,17 @@
 import React from 'react';
 
-const Buttons = () => {
+const Buttons = (props) => {
 
   return (
     <div className="buttons">
       <div className="previous">
-        <button>Previous</button>
+        <button onClick={props.prevUserFn} className="navbuttons">Previous</button>
       </div>
-      <div className="edits"></div>
+      <div className="edits">
+        <button className="editbutton" onClick={props.deleteUserFn}>Delete</button>
+      </div>
       <div className="next">
-        <button>Next</button>
+        <button onClick={props.nextUserFn} className="navbuttons">Next</button>
       </div>
     </div>
   )
